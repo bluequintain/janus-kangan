@@ -215,3 +215,6 @@ server {
 
 # php-fpm
 php.ini : /etc/php/8.0/fpm/php.ini
+
+# run docker
+docker run --rm --name janus --network=host -v /root/janus:/usr/local/etc/janus/ -v /home/dev/public/:/home/dev/public/ quintain/janus:0.9
