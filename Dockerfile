@@ -355,7 +355,6 @@ RUN apt update && apt install -y php8.0-fpm \
                                  php8.0-zip
 RUN mkdir /run/php
 RUN sed -i -e 's@short_open_tag = Off@short_open_tag = On@g' /etc/php/8.0/fpm/php.ini
+RUN echo "security.limit_extensions = .php .html .htm .inc .class" >> /etc/php/8.0/fpm/pool.d/www.conf
 
 CMD nginx && php-fpm8.0 && janus
-
-
